@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c1xlgjc7felm0"]
+
+[ext_resource type="PackedScene" uid="uid://bnykclsctm7xk" path="res://models/gothic_coffee_table_1k.gltf" id="1_1m3bx"]
+[ext_resource type="Texture2D" uid="uid://cam46fbgl1x1t" path="res://textures/gothic_coffee_table_diff_1k.jpg" id="2_p2ax8"]
+[ext_resource type="Texture2D" uid="uid://jwo18vho5ko1" path="res://textures/gothic_coffee_table_nor_gl_1k.jpg" id="3_nda11"]
+[ext_resource type="Texture2D" uid="uid://c6qqa38p0t8c8" path="res://textures/gothic_coffee_table_arm_1k.jpg" id="4_lgkwh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fssx7"]
+size = Vector3(1.464325, 0.61499023, 1.4196777)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m3bx"]
+albedo_texture = ExtResource("2_p2ax8")
+roughness_texture = ExtResource("4_lgkwh")
+normal_enabled = true
+normal_texture = ExtResource("3_nda11")
+
+[node name="gothicTable" type="Node3D" unique_id=1756429773]
+
+[node name="pivot" type="RigidBody3D" parent="." unique_id=1424338139]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=1489466079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048690796, 0.25256348, -0.013061523)
+shape = SubResource("BoxShape3D_fssx7")
+
+[node name="gothic_coffee_table_1k" parent="pivot" unique_id=733895011 instance=ExtResource("1_1m3bx")]
+
+[node name="gothic_coffee_table" parent="pivot/gothic_coffee_table_1k" index="0" unique_id=758849374]
+surface_material_override/0 = SubResource("StandardMaterial3D_1m3bx")
+
+[editable path="pivot/gothic_coffee_table_1k"]

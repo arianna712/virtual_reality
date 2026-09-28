@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://delrqp0akolfh"]
+
+[ext_resource type="PackedScene" uid="uid://bbvxugn0ogoxt" path="res://models/croissant_1k.gltf" id="1_hlr1l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fssx7"]
+size = Vector3(0.19999999, 0.06015625, 0.07566406)
+
+[node name="croissant" type="Node3D" unique_id=777791384]
+
+[node name="Pivot" type="RigidBody3D" parent="." unique_id=178475670]
+
+[node name="croissant_1k" parent="Pivot" unique_id=1252581905 instance=ExtResource("1_hlr1l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot" unique_id=1047014297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.02992187, 0.0049023554)
+shape = SubResource("BoxShape3D_fssx7")

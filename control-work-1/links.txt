@@ -1,0 +1,22 @@
+Links of the models 
+Polyheaven:
+	- lamp: https://polyhaven.com/a/industrial_wall_sconce
+	- bronze whale statue: https://polyhaven.com/a/bronze_whale_statue
+	- ceramic vase: https://polyhaven.com/a/ceramic_vase_02
+	- croissant: https://polyhaven.com/a/croissant
+	- wooden cutting board: https://polyhaven.com/a/wooden_cutting_board
+	- jug: https://polyhaven.com/a/jug_01
+	- plate: https://polyhaven.com/a/carved_wooden_plate
+	- gothic coffee table: https://polyhaven.com/a/gothic_coffee_table
+	- sofa: https://polyhaven.com/a/Sofa_01
+	- plant: https://polyhaven.com/a/potted_plant_02
+	
+Texture (Polyheaven):
+	- terrain for the plant: https://polyhaven.com/a/farm_soil
+	- wood for the counter: https://polyhaven.com/a/white_oak_veneer
+	- tiles for the floor: https://polyhaven.com/a/floor_tiles_06
+	- tiles for the walls: https://polyhaven.com/a/stone_tile_wall
+	
+Sketchfab:
+	- teacup: https://sketchfab.com/3d-models/teacup-329bbcc440a545539e2ca4a98c9d5fa1
+	- window: https://sketchfab.com/3d-models/window-0624b680947d4ff38c5b8e60977f1fb6

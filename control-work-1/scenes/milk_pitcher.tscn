@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://coi3uj7qen0of"]
+
+[ext_resource type="PackedScene" uid="uid://prwvap6fkoqr" path="res://models/jug_01_1k.gltf" id="1_vamnp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fssx7"]
+height = 0.2025
+radius = 0.13
+
+[node name="milk_pitcher" type="RigidBody3D" unique_id=585660819]
+
+[node name="jug_01_1k" parent="." unique_id=1629359383 instance=ExtResource("1_vamnp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=322656815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11124999, 0)
+shape = SubResource("CylinderShape3D_fssx7")

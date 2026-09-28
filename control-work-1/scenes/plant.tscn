@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://rtyo8sccd7lf"]
+
+[ext_resource type="PackedScene" uid="uid://r1bqgfhdxp3v" path="res://models/potted_plant_02_1k.gltf" id="1_fi0kw"]
+[ext_resource type="Texture2D" uid="uid://cjc7ngs5dufh2" path="res://textures/potted_plant_02_pot_diff_1k.jpg" id="2_8qc6y"]
+[ext_resource type="Texture2D" uid="uid://dsp43f1yk0dim" path="res://textures/potted_plant_02_pot_nor_gl_1k.jpg" id="3_ljraq"]
+[ext_resource type="Texture2D" uid="uid://cgcfx101bja2u" path="res://textures/potted_plant_02_pot_rough_1k.jpg" id="4_2riao"]
+[ext_resource type="Texture2D" uid="uid://cxdbnqwrrglj8" path="res://textures/potted_plant_02_leaves_diff_1k.jpg" id="5_68tkh"]
+[ext_resource type="Texture2D" uid="uid://bqcx1bd3lbxyo" path="res://textures/potted_plant_02_leaves_nor_gl_1k.jpg" id="6_cqtiq"]
+[ext_resource type="Texture2D" uid="uid://dl7auuprwssmh" path="res://textures/potted_plant_02_leaves_rough_1k.jpg" id="7_kp45f"]
+[ext_resource type="Texture2D" uid="uid://butgd1fm6wffs" path="res://textures/farm_soil_diff_1k.jpg" id="8_68tkh"]
+[ext_resource type="Texture2D" uid="uid://c1mo5n1y2xsos" path="res://textures/farm_soil_nor_gl_1k.jpg" id="9_cqtiq"]
+[ext_resource type="Texture2D" uid="uid://dily88tmp53u" path="res://textures/farm_soil_arm_1k.jpg" id="10_kp45f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62ul4"]
+albedo_texture = ExtResource("2_8qc6y")
+roughness_texture = ExtResource("4_2riao")
+normal_enabled = true
+normal_texture = ExtResource("3_ljraq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odjdt"]
+albedo_texture = ExtResource("5_68tkh")
+roughness_texture = ExtResource("7_kp45f")
+normal_enabled = true
+normal_texture = ExtResource("6_cqtiq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv2x"]
+albedo_texture = ExtResource("8_68tkh")
+roughness_texture = ExtResource("10_kp45f")
+normal_enabled = true
+normal_texture = ExtResource("9_cqtiq")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fssx7"]
+height = 0.8640137
+radius = 0.40478516
+
+[node name="Node3D" type="Node3D" unique_id=831186361]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=517858879]
+
+[node name="potted_plant_02_1k" parent="RigidBody3D" unique_id=2022351271 instance=ExtResource("1_fi0kw")]
+
+[node name="potted_plant_02_pot" parent="RigidBody3D/potted_plant_02_1k" index="0" unique_id=45222079]
+surface_material_override/0 = SubResource("StandardMaterial3D_62ul4")
+
+[node name="potted_plant_02_leaves" parent="RigidBody3D/potted_plant_02_1k" index="1" unique_id=874831746]
+surface_material_override/0 = SubResource("StandardMaterial3D_odjdt")
+
+[node name="potted_plant_02_dirt" parent="RigidBody3D/potted_plant_02_1k" index="2" unique_id=1110755052]
+surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=576550410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041152477, 0.4276123, 0)
+shape = SubResource("CylinderShape3D_fssx7")
+
+[editable path="RigidBody3D/potted_plant_02_1k"]

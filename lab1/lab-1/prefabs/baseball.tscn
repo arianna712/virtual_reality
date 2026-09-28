@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://j4vpsc15ss30"]
+
+[ext_resource type="PackedScene" uid="uid://ovl4kdthlxhl" path="res://models/baseball_01_1k.gltf" id="1_4mtul"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fssx7"]
+radius = 0.038555082
+
+[node name="Baseball" type="RigidBody3D" unique_id=99116100]
+
+[node name="baseball_01_1k" parent="." unique_id=1025314155 instance=ExtResource("1_4mtul")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=727733113]
+shape = SubResource("SphereShape3D_fssx7")

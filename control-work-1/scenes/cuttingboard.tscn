@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bto6qcq82em0k"]
+
+[ext_resource type="PackedScene" uid="uid://bsslsdfmeg0yo" path="res://models/wooden_cutting_board_1k.gltf" id="1_vm5wg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fssx7"]
+size = Vector3(0.45, 0.02, 0.24)
+
+[node name="cuttingboard" type="Node3D" unique_id=883877562]
+
+[node name="Pivot" type="RigidBody3D" parent="." unique_id=1137922774]
+
+[node name="blend_export" parent="Pivot" unique_id=1727279421 instance=ExtResource("1_vm5wg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot" unique_id=507082634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005000025, 0.019999998, -3.7252903e-08)
+shape = SubResource("BoxShape3D_fssx7")

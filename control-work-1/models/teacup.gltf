@@ -1,0 +1,422 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 6019,
+      "max": [
+        13.889556884765625,
+        4.618040084838867,
+        13.95167350769043
+      ],
+      "min": [
+        -13.64885425567627,
+        1.9203052520751953,
+        -13.705077171325684
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 72228,
+      "componentType": 5126,
+      "count": 6019,
+      "max": [
+        0.9960280060768127,
+        1.0,
+        0.790861964225769
+      ],
+      "min": [
+        -0.5765529870986938,
+        -1.0,
+        -0.8979566097259521
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 6019,
+      "max": [
+        0.9989476799964905,
+        0.95722895860672,
+        0.9989618062973022,
+        1.0
+      ],
+      "min": [
+        -0.8874965906143188,
+        -0.7054204940795898,
+        -0.9991165399551392,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 6019,
+      "max": [
+        0.5003549456596375,
+        0.9921875
+      ],
+      "min": [
+        0.007812498137354851,
+        0.0078125
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 35646,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 144456,
+      "componentType": 5126,
+      "count": 3127,
+      "max": [
+        13.46199893951416,
+        12.756498336791992,
+        9.736907958984375
+      ],
+      "min": [
+        -9.707300186157227,
+        1.9209339618682861,
+        -9.70019245147705
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 181980,
+      "componentType": 5126,
+      "count": 3127,
+      "max": [
+        0.9998569488525391,
+        1.0,
+        0.9999963641166687
+      ],
+      "min": [
+        -0.9956272840499878,
+        -1.0,
+        -0.9998566508293152
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 96304,
+      "componentType": 5126,
+      "count": 3127,
+      "max": [
+        0.9945200085639954,
+        0.9957956075668335,
+        0.9999818801879883,
+        1.0
+      ],
+      "min": [
+        -0.9948104619979858,
+        -0.9801021814346313,
+        -0.9998915791511536,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 48152,
+      "componentType": 5126,
+      "count": 3127,
+      "max": [
+        0.9901016354560852,
+        0.9061777591705322
+      ],
+      "min": [
+        0.0078125,
+        0.007812499534338713
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 142584,
+      "componentType": 5125,
+      "count": 17658,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "ecto (https://sketchfab.com/ecto148)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/teacup-329bbcc440a545539e2ca4a98c9d5fa1",
+      "title": "TeaCup"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 213216,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 73168,
+      "byteOffset": 213216,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 219504,
+      "byteOffset": 286384,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 146336,
+      "byteOffset": 505888,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 652224,
+      "uri": "teacup.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/SaucerMat_baseColor.png"
+    },
+    {
+      "uri": "textures/SaucerMat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/SaucerMat_normal.png"
+    },
+    {
+      "uri": "textures/TeaCupMat_baseColor.png"
+    },
+    {
+      "uri": "textures/TeaCupMat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/TeaCupMat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "SaucerMat",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "TeaCupMat",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Saucer2_SaucerMat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "TeaCup3_TeaCupMat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0735583305358887,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.3837783536781757e-16,
+        -1.0735583305358887,
+        0.0,
+        0.0,
+        1.0735583305358887,
+        2.3837783536781757e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "1a6373c28edc406591706506c8c12b16.fbx"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "Saucer2"
+    },
+    {
+      "mesh": 0,
+      "name": "Saucer2_SaucerMat_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.24970515072345734,
+        0.0,
+        1.0
+      ],
+      "name": "TeaCup3"
+    },
+    {
+      "mesh": 1,
+      "name": "TeaCup3_TeaCupMat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}

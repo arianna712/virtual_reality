@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bctlxrojpy5nl"]
+
+[ext_resource type="PackedScene" uid="uid://hdycv3cbqhqn" path="res://models/classic_laptop_1k.gltf" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://j4vpsc15ss30" path="res://prefabs/baseball.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://bd0uroqfgga7i" path="res://models/textures/hinoki_planks_diff_1k.jpg" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://8qx0xamjnva7" path="res://models/textures/hinoki_planks_nor_gl_1k.jpg" id="4_tbgi4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
+size = Vector3(0.6547127, 0.059322357, 0.4849758)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0dgm6"]
+sky_top_color = Color(0.6433271, 0.30622926, 0.5585547, 1)
+sky_horizon_color = Color(0.4410289, 0.7174106, 0.6553291, 1)
+
+[sub_resource type="Sky" id="Sky_ssgig"]
+sky_material = SubResource("ProceduralSkyMaterial_0dgm6")
+
+[sub_resource type="Environment" id="Environment_fssx7"]
+background_mode = 2
+sky = SubResource("Sky_ssgig")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fssx7"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fssx7"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62ul4"]
+albedo_texture = ExtResource("3_jyhfs")
+normal_enabled = true
+normal_texture = ExtResource("4_tbgi4")
+uv1_scale = Vector3(5, 5, 5)
+
+[node name="Root" type="Node3D" unique_id=1520222265]
+
+[node name="classic_laptop_1k" parent="." unique_id=490076753 instance=ExtResource("1_o5qli")]
+transform = Transform3D(0.99991167, 0.0052355733, -0.012217001, -0.005235964, 0.9999863, 0, 0.012216833, 6.3967775e-05, 0.9999254, 0, -0.09801546, 0)
+
+[node name="CollisionShape3D" parent="classic_laptop_1k/classic_laptop/StaticBody3D" parent_id_path=PackedInt32Array(490076753, 1107686303) index="0" unique_id=801920812]
+transform = Transform3D(1, 2.0639845e-10, 0, 1.04023457e-10, 1, 0, 0, 8.389179e-09, 1, -0.0035898734, 0.031912398, -0.0019812898)
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Baseball" parent="." unique_id=99116100 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10329783, 0.3365397, 0.15698592)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=409088449]
+transform = Transform3D(0.9973221, 0.030215293, 0.06660016, -0.03973633, 0.98839355, 0.14662622, -0.061396796, -0.14888003, 0.9869474, 0.029676259, 0.45741794, 0.85576606)
+fov = 79.99299
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=582422425]
+environment = SubResource("Environment_fssx7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1444202654]
+transform = Transform3D(0.9946552, 0.0034267046, 0.103195645, -0.05143189, 0.8830748, 0.466405, -0.08953124, -0.46921968, 0.87853116, -0.119234264, 1.4573658, 3.5305004)
+light_color = Color(1, 1, 0.9137255, 1)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=603546214]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=769308875]
+shape = SubResource("BoxShape3D_fssx7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2060505498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15487513, 0)
+mesh = SubResource("BoxMesh_fssx7")
+surface_material_override/0 = SubResource("StandardMaterial3D_62ul4")
+
+[editable path="classic_laptop_1k"]

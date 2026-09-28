@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cic4rchdsppk6"]
+
+[ext_resource type="PackedScene" uid="uid://cj2djck1sfyxi" path="res://models/industrial_wall_sconce_1k.gltf" id="1_72t4t"]
+[ext_resource type="Texture2D" uid="uid://c6nwvvotn6m8p" path="res://textures/industrial_wall_sconce_diff_1k.jpg" id="2_f2tjl"]
+[ext_resource type="Texture2D" uid="uid://bhktjka3h0lfs" path="res://textures/industrial_wall_sconce_nor_gl_1k.jpg" id="3_wd4c3"]
+[ext_resource type="Texture2D" uid="uid://bxyytshcom1c2" path="res://textures/industrial_wall_sconce_arm_1k.jpg" id="4_f3gd7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62ul4"]
+albedo_texture = ExtResource("2_f2tjl")
+roughness_texture = ExtResource("4_f3gd7")
+normal_enabled = true
+normal_texture = ExtResource("3_wd4c3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fssx7"]
+size = Vector3(0.15270996, 0.34127808, 0.2590332)
+
+[node name="lamp" type="Node3D" unique_id=1824165895]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1386410531]
+
+[node name="industrial_wall_sconce_1k" parent="StaticBody3D" unique_id=1620049426 instance=ExtResource("1_72t4t")]
+
+[node name="industrial_wall_sconce" parent="StaticBody3D/industrial_wall_sconce_1k" index="0" unique_id=2032131781]
+surface_material_override/0 = SubResource("StandardMaterial3D_62ul4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=736042904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001159668, 0.15080261, 0.13464355)
+shape = SubResource("BoxShape3D_fssx7")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="." unique_id=625794558]
+transform = Transform3D(0.99999833, 0.00013084387, -0.0018299446, 0.001011752, -0.8713958, 0.4905797, -0.0015304165, -0.49058074, -0.87139446, 0.0034436267, 0.034607917, 0.18844199)
+light_color = Color(0.9925079, 0.9934048, 0.97159606, 1)
+light_energy = 2.0
+light_size = 0.12
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 20.0
+
+[editable path="StaticBody3D/industrial_wall_sconce_1k"]

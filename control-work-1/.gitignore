@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Local check logs and temporary scene saves
+*.log
+*.tmp

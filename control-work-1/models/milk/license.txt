@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lowpoly Milk
+* source:	https://sketchfab.com/3d-models/lowpoly-milk-91492741c1fe4b5b80c89d8202664cd5
+* author:	beewee (https://sketchfab.com/beewee)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lowpoly Milk" (https://sketchfab.com/3d-models/lowpoly-milk-91492741c1fe4b5b80c89d8202664cd5) by beewee (https://sketchfab.com/beewee) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

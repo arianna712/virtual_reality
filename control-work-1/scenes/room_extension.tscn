@@ -1,0 +1,141 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Texture2D" path="res://textures/stone_tile_wall_diff_1k.jpg" id="1_wall"]
+[ext_resource type="Texture2D" path="res://textures/oak_veneer_05_diff_1k.jpg" id="2_wood"]
+
+[sub_resource type="StandardMaterial3D" id="WallMaterial"]
+albedo_texture = ExtResource("1_wall")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="CeilingMaterial"]
+albedo_color = Color(0.80, 0.82, 0.84, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="DoorMaterial"]
+albedo_color = Color(0.65, 0.48, 0.32, 1)
+albedo_texture = ExtResource("2_wood")
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="FrameMaterial"]
+albedo_color = Color(0.24, 0.16, 0.10, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="HandleMaterial"]
+albedo_color = Color(0.67, 0.55, 0.32, 1)
+metallic = 0.8
+roughness = 0.3
+
+[sub_resource type="BoxMesh" id="WallLeftMesh"]
+material = SubResource("WallMaterial")
+size = Vector3(2.65, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="WallLeftShape"]
+size = Vector3(2.65, 4, 0.1)
+
+[sub_resource type="BoxMesh" id="WallRightMesh"]
+material = SubResource("WallMaterial")
+size = Vector3(5.8, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="WallRightShape"]
+size = Vector3(5.8, 4, 0.1)
+
+[sub_resource type="BoxMesh" id="WallHeaderMesh"]
+material = SubResource("WallMaterial")
+size = Vector3(1.25, 1.62145, 0.1)
+
+[sub_resource type="BoxShape3D" id="WallHeaderShape"]
+size = Vector3(1.25, 1.62145, 0.1)
+
+[sub_resource type="BoxMesh" id="CeilingMesh"]
+material = SubResource("CeilingMaterial")
+size = Vector3(9.8, 0.16, 7.7)
+
+[sub_resource type="BoxShape3D" id="CeilingShape"]
+size = Vector3(9.8, 0.16, 7.7)
+
+[sub_resource type="BoxMesh" id="DoorMesh"]
+material = SubResource("DoorMaterial")
+size = Vector3(1.16, 2.3, 0.08)
+
+[sub_resource type="BoxShape3D" id="DoorShape"]
+size = Vector3(1.16, 2.3, 0.08)
+
+[sub_resource type="BoxMesh" id="FrameMesh"]
+material = SubResource("FrameMaterial")
+size = Vector3(0.09, 2.395, 0.14)
+
+[node name="RoomExtension" type="Node3D"]
+
+[node name="ClosingWall" type="Node3D" parent="."]
+
+[node name="LeftSection" type="StaticBody3D" parent="ClosingWall"]
+position = Vector3(-3.525, 2.0214474, -7.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ClosingWall/LeftSection"]
+mesh = SubResource("WallLeftMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClosingWall/LeftSection"]
+shape = SubResource("WallLeftShape")
+
+[node name="RightSection" type="StaticBody3D" parent="ClosingWall"]
+position = Vector3(1.95, 2.0214474, -7.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ClosingWall/RightSection"]
+mesh = SubResource("WallRightMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClosingWall/RightSection"]
+shape = SubResource("WallRightShape")
+
+[node name="AboveDoor" type="StaticBody3D" parent="ClosingWall"]
+position = Vector3(-1.575, 3.210725, -7.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ClosingWall/AboveDoor"]
+mesh = SubResource("WallHeaderMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClosingWall/AboveDoor"]
+shape = SubResource("WallHeaderShape")
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+position = Vector3(0, 4.10145, -3.225)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling"]
+mesh = SubResource("CeilingMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+shape = SubResource("CeilingShape")
+
+[node name="Door" type="StaticBody3D" parent="."]
+position = Vector3(-1.575, 1.2, -6.96)
+
+[node name="Mesh" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("DoorMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+shape = SubResource("DoorShape")
+
+[node name="LeftFrame" type="MeshInstance3D" parent="Door"]
+position = Vector3(-0.625, 0.0475, 0.05)
+mesh = SubResource("FrameMesh")
+
+[node name="RightFrame" type="MeshInstance3D" parent="Door"]
+position = Vector3(0.625, 0.0475, 0.05)
+mesh = SubResource("FrameMesh")
+
+[node name="TopFrame" type="MeshInstance3D" parent="Door"]
+position = Vector3(0, 1.2, 0.05)
+rotation = Vector3(0, 0, 1.5707964)
+scale = Vector3(1, 0.56, 1)
+mesh = SubResource("FrameMesh")
+
+[node name="HandlePlate" type="MeshInstance3D" parent="Door"]
+position = Vector3(0.43, -0.1, 0.06)
+scale = Vector3(0.65, 0.055, 0.2)
+mesh = SubResource("FrameMesh")
+material_override = SubResource("HandleMaterial")
+
+[node name="Handle" type="MeshInstance3D" parent="Door"]
+position = Vector3(0.37, -0.1, 0.09)
+rotation = Vector3(0, 0, 1.5707964)
+scale = Vector3(0.23, 0.075, 0.23)
+mesh = SubResource("FrameMesh")
+material_override = SubResource("HandleMaterial")

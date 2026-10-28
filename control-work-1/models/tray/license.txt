@@ -1,0 +1,11 @@
+Model Information:
+* title:	Buffet - Vassoi - Vassoi Rettangolari
+* source:	https://sketchfab.com/3d-models/buffet-vassoi-vassoi-rettangolari-293d00c2c7424a2c96f0ff26fde54bd7
+* author:	MPS Porcellane di Saronno (https://sketchfab.com/mpsporcellane)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Buffet - Vassoi - Vassoi Rettangolari" (https://sketchfab.com/3d-models/buffet-vassoi-vassoi-rettangolari-293d00c2c7424a2c96f0ff26fde54bd7) by MPS Porcellane di Saronno (https://sketchfab.com/mpsporcellane) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

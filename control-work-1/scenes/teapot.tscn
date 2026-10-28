@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d3eweace3uoqe"]
+
+[ext_resource type="PackedScene" uid="uid://b42vf2rvsepf3" path="res://models/teapot/scene.gltf" id="1_8y5ma"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wgxvw"]
+height = 0.37600708
+radius = 0.16015625
+
+[node name="teapot" type="Node3D" unique_id=804598784]
+
+[node name="pivot" type="RigidBody3D" parent="." unique_id=714254990]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=348339676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18415833, 0)
+shape = SubResource("CylinderShape3D_wgxvw")
+
+[node name="Sketchfab_Scene" parent="pivot" unique_id=1437393451 instance=ExtResource("1_8y5ma")]

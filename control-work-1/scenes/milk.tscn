@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bv01c5458ipd6"]
+
+[ext_resource type="PackedScene" uid="uid://d1tcv8uwb625n" path="res://models/milk/scene.gltf" id="1_b1h7t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bm8xf"]
+size = Vector3(7.9965973, 22.417236, 7.994385)
+
+[node name="milk" type="Node3D" unique_id=930542711]
+
+[node name="pivot" type="RigidBody3D" parent="." unique_id=868853815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.473585)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=846135461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0689926, 11.208721, -13.635258)
+shape = SubResource("BoxShape3D_bm8xf")
+
+[node name="Sketchfab_Scene" parent="pivot" unique_id=314776797 instance=ExtResource("1_b1h7t")]

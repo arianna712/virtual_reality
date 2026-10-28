@@ -9,6 +9,7 @@ radius = 0.14999999
 [node name="plate" type="Node3D" unique_id=1388767721]
 
 [node name="pivot" type="RigidBody3D" parent="." unique_id=1100093471]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=1645922065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0.017499989, -0.01)

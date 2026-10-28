@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xcltry62hhvs"]
+
+[ext_resource type="PackedScene" uid="uid://cl5hqixfms280" path="res://models/food_apple_01_1k.gltf" id="1_h071m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_maxoh"]
+radius = 0.050240014
+
+[node name="apple" type="Node3D" unique_id=978245007]
+
+[node name="pivot" type="RigidBody3D" parent="." unique_id=1412732877]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=705696307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04388252, 0)
+shape = SubResource("SphereShape3D_maxoh")
+
+[node name="food_apple_01_1k" parent="pivot" unique_id=2036220576 instance=ExtResource("1_h071m")]

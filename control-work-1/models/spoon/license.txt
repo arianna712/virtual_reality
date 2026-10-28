@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spoon
+* source:	https://sketchfab.com/3d-models/spoon-e1745c4aa7c046a2b5193d2d23be0192
+* author:	Sid Weston (https://sketchfab.com/SidWeston)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spoon" (https://sketchfab.com/3d-models/spoon-e1745c4aa7c046a2b5193d2d23be0192) by Sid Weston (https://sketchfab.com/SidWeston) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

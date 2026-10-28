@@ -3,13 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://dqfve5tjqg838" path="res://models/teacup.gltf" id="1_ij13i"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fssx7"]
-height = 0.118361235
+height = 0.11943406
 radius = 0.14550781
 
-[node name="teacup" type="RigidBody3D" unique_id=130458482]
+[node name="teacup" type="Node3D" unique_id=2125586022]
 
-[node name="Sketchfab_Scene" parent="." unique_id=705744609 instance=ExtResource("1_ij13i")]
+[node name="pivot" type="RigidBody3D" parent="." unique_id=1033046140]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=693211186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07982123, 0)
+[node name="Sketchfab_Scene" parent="pivot" unique_id=705744609 instance=ExtResource("1_ij13i")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=693211186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07928482, 0)
 shape = SubResource("CylinderShape3D_fssx7")

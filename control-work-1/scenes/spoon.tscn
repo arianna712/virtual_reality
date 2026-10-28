@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3w261v3etrle"]
+
+[ext_resource type="PackedScene" uid="uid://ch8uwmw2in4ox" path="res://models/spoon/scene.gltf" id="1_l12hh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r36l6"]
+size = Vector3(21.291412, 11.604641, 110.43959)
+
+[node name="spoon" type="Node3D" unique_id=1984044190]
+
+[node name="pivot" type="RigidBody3D" parent="." unique_id=2095792711]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=272975537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.041264, 14.96987, 0.60582924)
+shape = SubResource("BoxShape3D_r36l6")
+
+[node name="Sketchfab_Scene" parent="pivot" unique_id=850256173 instance=ExtResource("1_l12hh")]

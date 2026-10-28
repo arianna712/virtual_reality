@@ -6,10 +6,13 @@
 height = 0.2025
 radius = 0.13
 
-[node name="milk_pitcher" type="RigidBody3D" unique_id=585660819]
+[node name="milk_pitcher" type="Node3D" unique_id=1129535380]
 
-[node name="jug_01_1k" parent="." unique_id=1629359383 instance=ExtResource("1_vamnp")]
+[node name="pivot" type="RigidBody3D" parent="." unique_id=395318014]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=322656815]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot" unique_id=322656815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11124999, 0)
 shape = SubResource("CylinderShape3D_fssx7")
+
+[node name="jug_01_1k" parent="pivot" unique_id=1629359383 instance=ExtResource("1_vamnp")]

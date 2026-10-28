@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tea Pot
+* source:	https://sketchfab.com/3d-models/tea-pot-8dfd4a071a2e493d8403317603960ade
+* author:	Ygor L.Cavalcante (https://sketchfab.com/ygorofflc)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tea Pot" (https://sketchfab.com/3d-models/tea-pot-8dfd4a071a2e493d8403317603960ade) by Ygor L.Cavalcante (https://sketchfab.com/ygorofflc) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

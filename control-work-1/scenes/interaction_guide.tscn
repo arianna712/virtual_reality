@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0.035, 0.055, 0.08, 0.92)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
+
+[node name="InteractionGuide" type="CanvasLayer"]
+layer = 10
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Screen"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 400.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="Margin" type="MarginContainer" parent="Screen/Panel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="Rows" type="VBoxContainer" parent="Screen/Panel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Prepare breakfast"
+
+[node name="Progress" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53, 0.83, 0.77, 1)
+text = "Completed: 0/19"
+
+[node name="Objective" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Turn on the lamp."
+autowrap_mode = 3
+
+[node name="Inventory" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+text = "Inventory: empty"
+
+[node name="Controls" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.76, 0.81, 1)
+text = "WASD: move | Mouse: look\nE: interact | Esc: release the mouse"
+autowrap_mode = 3
+
+[node name="Feedback" type="Label" parent="Screen/Panel/Margin/Rows"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.83, 0.48, 1)
+autowrap_mode = 3
+
+[node name="Prompt" type="Label" parent="Screen"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -90.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

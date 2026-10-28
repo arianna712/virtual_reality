@@ -8,6 +8,7 @@ size = Vector3(0.19999999, 0.06015625, 0.07566406)
 [node name="croissant" type="Node3D" unique_id=777791384]
 
 [node name="Pivot" type="RigidBody3D" parent="." unique_id=178475670]
+collision_layer = 2
 
 [node name="croissant_1k" parent="Pivot" unique_id=1252581905 instance=ExtResource("1_hlr1l")]
 

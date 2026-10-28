@@ -16,7 +16,8 @@ size = Vector3(0.15270996, 0.34127808, 0.2590332)
 
 [node name="lamp" type="Node3D" unique_id=1824165895]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1386410531]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1386410531 groups=["lamp"]]
+collision_layer = 2
 
 [node name="industrial_wall_sconce_1k" parent="StaticBody3D" unique_id=1620049426 instance=ExtResource("1_72t4t")]
 

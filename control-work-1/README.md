@@ -25,6 +25,6 @@ All 19 steps have an audio cue. The lamp switch clicks, each pickup produces a s
 
 ## Credits and AI assistance
 
-The first-person controller is by Jeh3no. Model and texture sources, controller credits and license notices are listed in [links.txt](links.txt).
+The first-person controller is by Jeh3no. Model and texture sources, controller credits and license notices are listed in [links.txt](https://github.com/arianna712/virtual_reality/blob/main/control-work-1/links.txt).
 
-I used ChatGPT to help implement and debug the guided interactions, inventory and on-screen instructions. For Lab 3, I also used it to build the radio and clock from Godot primitives, set up the particle effects and synthesize the audio clips in Python. I tested the scene in Godot and adjusted the sound levels by ear.
+I used ChatGPT to help implement and debug the guided interactions, inventory and on-screen instructions. For Lab 3, I also used it to build the radio and clock from Godot primitives and synthesize the audio clips in Python. I tested the scene in Godot and adjusted the sound levels by ear.

@@ -54,3 +54,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+LAB 3:
+- Scene additions: Radio and WallClock are original models built with Godot primitive meshes for this project. The fitted window reuses the credited Lab 2 window model with a custom transparent glass material.
+- Audio clips were synthesized in Python with ChatGPT’s assistance. I tested them in Godot and adjusted their relative levels through listening tests.
+- Lamp dust: original Godot CPU particles and dust mote mesh, visible when the player switches on the wall lamp.

@@ -8,6 +8,18 @@ const ITEM_NAMES = {
 const ITEM_ORDER = ["tray", "plate", "teacup", "spoon", "milk_pitcher", "milk", "teapot", "croissant", "apple"]
 const GUIDE_SCENE = preload("res://scenes/interaction_guide.tscn")
 
+const SWITCH_CUE = preload("res://audio/interactions/switch.wav")
+const LIFT_CUE = preload("res://audio/interactions/lift.wav")
+const METAL_CUE = preload("res://audio/interactions/metal.wav")
+const CERAMIC_CUE = preload("res://audio/interactions/ceramic.wav")
+const SOFT_CUE = preload("res://audio/interactions/soft.wav")
+const TAP_CUE = preload("res://audio/interactions/tap.wav")
+const PLACEMENT_CUES = {
+	"tray": TAP_CUE, "plate": CERAMIC_CUE, "teacup": CERAMIC_CUE,
+	"spoon": METAL_CUE, "milk_pitcher": METAL_CUE, "milk": TAP_CUE,
+	"teapot": CERAMIC_CUE, "croissant": SOFT_CUE, "apple": TAP_CUE
+}
+
 var inventory: Array[String] = []
 var steps: Array[Dictionary] = [{"action": "lamp", "item": "lamp"}]
 var current_step := 0
@@ -28,7 +40,10 @@ func _process(delta: float) -> void:
 		guide.get_node("Screen/Panel/Margin/Rows/Feedback").text = ""
 	var target := _interaction_target()
 	var prompt := "Move closer and aim at the indicated object."
-	if current_step >= steps.size():
+	if target != null and target.name == "Radio":
+		var music := target.get_node("Music") as AudioStreamPlayer3D
+		prompt = "E - Turn radio off    R - Restart song" if music.playing else "E - Turn radio on"
+	elif current_step >= steps.size():
 		prompt = "Task completed!"
 	elif target != null:
 		if target.name == "DropZone_table":
@@ -44,12 +59,26 @@ func _process(delta: float) -> void:
 	guide.get_node("Screen/Prompt").text = prompt
 
 func _input(event: InputEvent) -> void:
-	if not event.is_action_pressed("use") or event.is_echo():
-		return
-	if current_step >= steps.size():
+	var restart := event.is_action_pressed("restart_radio")
+	if event.is_echo() or not (event.is_action_pressed("use") or restart):
 		return
 	force_raycast_update()
 	var target := _interaction_target()
+	if target != null and target.name == "Radio":
+		var music := target.get_node("Music") as AudioStreamPlayer3D
+		if restart and music.playing:
+			music.play(0.0)
+			_feedback("Song restarted.")
+		elif not restart:
+			if music.playing:
+				music.stop()
+				_feedback("Radio off.")
+			else:
+				music.play(0.0)
+				_feedback("Radio on.")
+		return
+	if restart or current_step >= steps.size():
+		return
 	if target == null:
 		_feedback("Move closer and aim at the indicated object.")
 		return
@@ -64,6 +93,7 @@ func _input(event: InputEvent) -> void:
 			_feedback("This lamp cannot be turned on.")
 			return
 		light.visible = true
+		_play_cue(SWITCH_CUE, light.global_position)
 		_advance("Lamp turned on!")
 	elif target_name == "DropZone_table":
 		if step["action"] != "place" or not inventory.has(str(step["item"])):
@@ -74,6 +104,7 @@ func _input(event: InputEvent) -> void:
 			_feedback("No placement spot is available for this item.")
 			return
 		placed_item.show()
+		_play_cue(PLACEMENT_CUES[step["item"]], placed_item.global_position)
 		inventory.erase(str(step["item"]))
 		_advance("Item placed on the table!")
 	else:
@@ -81,6 +112,7 @@ func _input(event: InputEvent) -> void:
 			_feedback("First: " + _step_text())
 			return
 		inventory.append(target_name)
+		_play_cue(LIFT_CUE, (target as Node3D).global_position)
 		target.queue_free()
 		_advance("Picked up: " + str(ITEM_NAMES[target_name]))
 
@@ -91,7 +123,7 @@ func _interaction_target() -> Node:
 	var node := get_collider() as Node
 	while node != null and node != get_tree().current_scene:
 		var node_name := str(node.name)
-		if node_name == "DropZone_table" or node_name in ["lamp", "lamp2"] or ITEM_NAMES.has(node_name):
+		if node_name == "DropZone_table" or node_name in ["lamp", "lamp2", "Radio"] or ITEM_NAMES.has(node_name):
 			return node
 		node = node.get_parent()
 	return null
@@ -109,6 +141,8 @@ func _step_text() -> String:
 
 func _advance(message: String) -> void:
 	current_step += 1
+	if current_step == steps.size():
+		guide.get_node("CompletionSound").play()
 	_update_guide()
 	_feedback(message)
 
@@ -121,3 +155,14 @@ func _update_guide() -> void:
 func _feedback(message: String) -> void:
 	guide.get_node("Screen/Panel/Margin/Rows/Feedback").text = message
 	feedback_time = 4.0
+
+
+func _play_cue(stream: AudioStream, location: Vector3) -> void:
+	var sound := AudioStreamPlayer3D.new()
+	sound.stream = stream
+	sound.unit_size = 1.8
+	sound.volume_db = -4.0
+	get_tree().current_scene.add_child(sound)
+	sound.global_position = location
+	sound.finished.connect(sound.queue_free)
+	sound.play()

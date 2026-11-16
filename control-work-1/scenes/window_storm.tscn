@@ -1,0 +1,54 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/window_storm.gd" id="script"]
+[ext_resource type="AudioStream" path="res://audio/window_wind.wav" id="wind"]
+[ext_resource type="AudioStream" path="res://audio/window_rain.wav" id="rain"]
+[ext_resource type="AudioStream" path="res://audio/distant_thunder.wav" id="thunder"]
+
+[sub_resource type="StandardMaterial3D" id="water"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.77, 0.82, 0.86, 0.54)
+
+[sub_resource type="BoxMesh" id="drop"]
+material = SubResource("water")
+size = Vector3(0.006, 0.085, 0.006)
+
+[node name="WindowStorm" type="Node3D"]
+script = ExtResource("script")
+
+[node name="Wind" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("wind")
+volume_db = -28.5
+unit_size = 3.0
+
+[node name="Thunder" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("thunder")
+volume_db = -1.0
+unit_size = 5.0
+
+[node name="Rain" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("rain")
+volume_db = -38.0
+unit_size = 2.0
+
+[node name="Drops" type="CPUParticles3D" parent="."]
+position = Vector3(0, 1.65, 0.75)
+emitting = false
+amount = 480
+lifetime = 0.98
+emission_shape = 3
+emission_box_extents = Vector3(2.8, 0.1, 0.65)
+direction = Vector3(0.08, -1, 0)
+spread = 2.0
+gravity = Vector3(0, -2.5, 0)
+initial_velocity_min = 4.5
+initial_velocity_max = 6.0
+mesh = SubResource("drop")
+cast_shadow = 0
+
+[node name="ThunderInterval" type="Timer" parent="."]
+wait_time = 26.0
+one_shot = true
+
+[connection signal="timeout" from="ThunderInterval" to="." method="_on_thunder_interval_timeout"]

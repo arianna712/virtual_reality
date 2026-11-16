@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bmy3k61to12b1"]
+
+[ext_resource type="Script" uid="uid://dtw60wd6sn41r" path="res://scenes/wall_clock.gd" id="clock_script"]
+[ext_resource type="AudioStream" uid="uid://cd5rttlhlko43" path="res://audio/clock_tick.wav" id="tick"]
+
+[sub_resource type="StandardMaterial3D" id="Walnut"]
+albedo_color = Color(0.27, 0.14, 0.085, 1)
+
+[sub_resource type="CylinderMesh" id="Case"]
+material = SubResource("Walnut")
+top_radius = 0.24
+bottom_radius = 0.24
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="Ivory"]
+albedo_color = Color(0.88, 0.82, 0.67, 1)
+
+[sub_resource type="CylinderMesh" id="Face"]
+material = SubResource("Ivory")
+top_radius = 0.219
+bottom_radius = 0.219
+height = 0.008
+
+[sub_resource type="StandardMaterial3D" id="Graphite"]
+albedo_color = Color(0.13, 0.14, 0.13, 1)
+
+[sub_resource type="BoxMesh" id="Index"]
+material = SubResource("Graphite")
+size = Vector3(0.009, 0.025, 0.004)
+
+[sub_resource type="BoxMesh" id="Hour"]
+material = SubResource("Graphite")
+size = Vector3(0.012, 0.096, 0.005)
+
+[sub_resource type="BoxMesh" id="Minute"]
+material = SubResource("Graphite")
+size = Vector3(0.012, 0.152, 0.005)
+
+[sub_resource type="StandardMaterial3D" id="Brass"]
+albedo_color = Color(0.7, 0.52, 0.28, 1)
+
+[sub_resource type="BoxMesh" id="Second"]
+material = SubResource("Brass")
+size = Vector3(0.004, 0.17, 0.005)
+
+[node name="WallClock" type="Node3D" unique_id=1402043082]
+script = ExtResource("clock_script")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1366655334]
+transform = Transform3D(1, 0, 0, 0, 3.1391647e-07, -1, 0, 1, 3.1391647e-07, 0, 0, 0)
+mesh = SubResource("Case")
+
+[node name="Dial" type="MeshInstance3D" parent="." unique_id=2132322338]
+transform = Transform3D(1, 0, 0, 0, 3.1391647e-07, -1, 0, 1, 3.1391647e-07, 0, 0, 0.028)
+mesh = SubResource("Face")
+
+[node name="Mark0" type="MeshInstance3D" parent="." unique_id=1577707269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.193, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark1" type="MeshInstance3D" parent="." unique_id=579585219]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, 0.0965, 0.1671429, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark2" type="MeshInstance3D" parent="." unique_id=988670604]
+transform = Transform3D(0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0, 1, 0.1671429, 0.0965, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark3" type="MeshInstance3D" parent="." unique_id=701100859]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.193, 1.1817842e-17, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark4" type="MeshInstance3D" parent="." unique_id=1025825665]
+transform = Transform3D(-0.50000006, 0.8660254, 0, -0.8660254, -0.50000006, 0, 0, 0, 1, 0.1671429, -0.0965, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark5" type="MeshInstance3D" parent="." unique_id=1719652278]
+transform = Transform3D(-0.8660254, 0.50000006, 0, -0.50000006, -0.8660254, 0, 0, 0, 1, 0.0965, -0.1671429, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark6" type="MeshInstance3D" parent="." unique_id=1657166490]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.3635683e-17, -0.193, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark7" type="MeshInstance3D" parent="." unique_id=2046964067]
+transform = Transform3D(-0.8660254, -0.49999997, 0, 0.49999997, -0.8660254, 0, 0, 0, 1, -0.0965, -0.1671429, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark8" type="MeshInstance3D" parent="." unique_id=257595928]
+transform = Transform3D(-0.4999999, -0.86602545, 0, 0.86602545, -0.4999999, 0, 0, 0, 1, -0.1671429, -0.0965, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark9" type="MeshInstance3D" parent="." unique_id=1569500554]
+transform = Transform3D(1.1924881e-08, -1, 0, 1, 1.1924881e-08, 0, 0, 0, 1, -0.193, -3.5453524e-17, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark10" type="MeshInstance3D" parent="." unique_id=1113923140]
+transform = Transform3D(0.4999999, -0.86602545, 0, 0.86602545, 0.4999999, 0, 0, 0, 1, -0.1671429, 0.0965, 0.035)
+mesh = SubResource("Index")
+
+[node name="Mark11" type="MeshInstance3D" parent="." unique_id=498031223]
+transform = Transform3D(0.8660253, -0.5000002, 0, 0.5000002, 0.8660253, 0, 0, 0, 1, -0.0965, 0.1671429, 0.035)
+mesh = SubResource("Index")
+
+[node name="Hour" type="Node3D" parent="." unique_id=208174373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04)
+
+[node name="Hand" type="MeshInstance3D" parent="Hour" unique_id=1925037982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048, 0)
+mesh = SubResource("Hour")
+
+[node name="Minute" type="Node3D" parent="." unique_id=1243323851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.046)
+
+[node name="Hand" type="MeshInstance3D" parent="Minute" unique_id=2128355930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.076, 0)
+mesh = SubResource("Minute")
+
+[node name="Second" type="Node3D" parent="." unique_id=2142262357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.052)
+
+[node name="Hand" type="MeshInstance3D" parent="Second" unique_id=1465782285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+mesh = SubResource("Second")
+
+[node name="Tick" type="AudioStreamPlayer3D" parent="." unique_id=1484180114]
+stream = ExtResource("tick")
+volume_db = -4.0
+unit_size = 1.5
+max_distance = 8.0
+
+[node name="Timer" type="Timer" parent="." unique_id=201420846]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_tick"]

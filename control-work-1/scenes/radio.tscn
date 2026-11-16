@@ -1,0 +1,161 @@
+[gd_scene format=3]
+
+[ext_resource type="AudioStream" path="res://audio/breakfast_radio.wav" id="music"]
+
+[sub_resource type="StandardMaterial3D" id="Walnut"]
+albedo_color = Color(0.27, 0.14, 0.085, 1)
+
+[sub_resource type="StandardMaterial3D" id="Ivory"]
+albedo_color = Color(0.88, 0.82, 0.67, 1)
+
+[sub_resource type="StandardMaterial3D" id="Graphite"]
+albedo_color = Color(0.13, 0.14, 0.13, 1)
+
+[sub_resource type="StandardMaterial3D" id="Brass"]
+albedo_color = Color(0.7, 0.52, 0.28, 1)
+
+[sub_resource type="BoxMesh" id="Cabinet"]
+material = SubResource("Walnut")
+size = Vector3(0.43, 0.24, 0.16)
+
+[sub_resource type="BoxMesh" id="Panel"]
+material = SubResource("Graphite")
+size = Vector3(0.398, 0.205, 0.01)
+
+[sub_resource type="BoxMesh" id="Slat"]
+material = SubResource("Ivory")
+size = Vector3(0.20, 0.006, 0.007)
+
+[sub_resource type="BoxMesh" id="Scale"]
+material = SubResource("Ivory")
+size = Vector3(0.129, 0.037, 0.006)
+
+[sub_resource type="BoxMesh" id="Needle"]
+material = SubResource("Graphite")
+size = Vector3(0.004, 0.031, 0.004)
+
+[sub_resource type="CylinderMesh" id="Knob"]
+material = SubResource("Brass")
+top_radius = 0.023
+bottom_radius = 0.023
+height = 0.023
+
+[sub_resource type="BoxShape3D" id="CaseShape"]
+size = Vector3(0.43, 0.24, 0.21)
+
+[node name="Radio" type="Node3D"]
+
+[node name="Cabinet" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.12, 0)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Cabinet")
+
+[node name="Front" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.12, 0.083)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Panel")
+
+[node name="Grille0" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.044, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille1" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.055499999999999994, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille2" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.067, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille3" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.0785, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille4" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.09, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille5" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.10149999999999999, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille6" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.113, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille7" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.1245, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille8" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.136, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille9" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.1475, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille10" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.15899999999999997, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille11" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.17049999999999998, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille12" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.182, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Grille13" type="MeshInstance3D" parent="."]
+position = Vector3(-0.078, 0.1935, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Slat")
+
+[node name="Dial" type="MeshInstance3D" parent="."]
+position = Vector3(0.11, 0.173, 0.092)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Scale")
+
+[node name="Tuner" type="MeshInstance3D" parent="."]
+position = Vector3(0.126, 0.173, 0.098)
+rotation = Vector3(0, 0, 0)
+mesh = SubResource("Needle")
+
+[node name="Knob0" type="MeshInstance3D" parent="."]
+position = Vector3(0.075, 0.084, 0.101)
+rotation = Vector3(1.570796, 0, 0)
+mesh = SubResource("Knob")
+
+[node name="Knob1" type="MeshInstance3D" parent="."]
+position = Vector3(0.147, 0.084, 0.101)
+rotation = Vector3(1.570796, 0, 0)
+mesh = SubResource("Knob")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("music")
+autoplay = true
+volume_db = -9.0
+unit_size = 1.6
+max_distance = 6.0
+
+[node name="Controls" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Case" type="CollisionShape3D" parent="Controls"]
+position = Vector3(0, 0.12, 0.015)
+shape = SubResource("CaseShape")

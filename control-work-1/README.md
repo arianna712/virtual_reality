@@ -2,6 +2,14 @@
 
 This lab adds sound and particle effects to the first-person breakfast scene from Lab 2. Turn on the lamp, then pick up and place the nine objects in the order shown on screen. The interface shows the current task, inventory and progress.
 
+## Lab 3 requirements at a glance
+
+| Requirement | Implementation |
+| --- | --- |
+| At least one feedback element for each interaction | Audio cues for all 19 breakfast steps: lamp switch, 9 pickups and 9 placements. Radio controls also provide on-screen confirmation. |
+| At least 5 ambient effects | **7 effects:** wind audio, thunder audio, rain audio, rain particles, clock ticking, radio music and dust particles near the lit lamp. |
+| List the assets used | Sources, credits and notes on the assets created for this project are included in `links.txt`. |
+
 ## Running the project
 
 Open `project.godot` in Godot 4.7 and press **F5**. You can also open `scenes/main.tscn` and press **F6**.
